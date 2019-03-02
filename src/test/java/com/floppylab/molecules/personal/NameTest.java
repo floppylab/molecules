@@ -5,9 +5,9 @@ import org.junit.Test;
 
 public class NameTest {
 
-	@Test
-	public void simpleNameTest() {
-		Name name = new Name("John Doe");
-		Assert.assertEquals("John Doe", name.getValue());
-	}
+    @Test
+    public void simpleNameTest() {
+        Name name = new Name("John Doe");
+        Assert.assertEquals("John Doe", name.getValue());
+    }
 }

@@ -9,17 +9,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Email extends Molecule<String> {
 
-	private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
 
-	public Email(final String value) {
-		super(value);
-	}
+    public Email(final String value) {
+        super(value);
+    }
 
-	@Override
-	protected void validate(String email) {
-		if(!EmailValidator.getInstance(true).isValid(email)) {
-			throw new IllegalArgumentException(String.format("Not a valid email address: [%s]", email));
-		}
-	}
+    @Override
+    protected void validate(String email) {
+        if (!EmailValidator.getInstance(true).isValid(email)) {
+            throw new IllegalArgumentException(String.format("Not a valid email address: [%s]", email));
+        }
+    }
 
 }
