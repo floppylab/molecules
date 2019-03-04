@@ -1,5 +1,6 @@
-package com.floppylab.molecules.personal;
+package com.floppylab.molecules.contact;
 
+import com.floppylab.molecules.contact.Email;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @MappedSuperclass
 @Embeddable
 @NoArgsConstructor
-public abstract class Molecule<T> implements Serializable {
+public abstract class Molecule<T extends Serializable> implements Serializable {
 
     private static final long serialVersionUID = 0L;
 
