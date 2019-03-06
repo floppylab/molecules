@@ -8,8 +8,8 @@ public class Name extends Molecule<String> {
 
     private static final long serialVersionUID = 0L;
 
-    protected static final int MINIMUM_LENGTH = 1;
-    protected static final int MAXIMUM_LENGTH = 100;
+    protected static final int NAME_MINIMUM_LENGTH = 1;
+    protected static final int NAME_MAXIMUM_LENGTH = 100;
 
     public Name(final String value) {
         super(value);
@@ -17,11 +17,11 @@ public class Name extends Molecule<String> {
 
     @Override
     protected void validate(String value) {
-        if (value.length() < MINIMUM_LENGTH) {
-            throw new IllegalArgumentException(String.format("Name cannot be shorter than %d", MINIMUM_LENGTH));
+        if (value.length() < NAME_MINIMUM_LENGTH) {
+            throw new IllegalArgumentException(String.format("Name cannot be shorter than %d", NAME_MINIMUM_LENGTH));
         }
-        if (value.length() > MAXIMUM_LENGTH) {
-            throw new IllegalArgumentException(String.format("Name cannot be longer than %d", MAXIMUM_LENGTH));
+        if (value.length() > NAME_MAXIMUM_LENGTH) {
+            throw new IllegalArgumentException(String.format("Name cannot be longer than %d", NAME_MAXIMUM_LENGTH));
         }
     }
 

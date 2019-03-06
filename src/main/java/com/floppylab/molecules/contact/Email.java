@@ -21,7 +21,7 @@ public class Email extends Molecule<String> {
         which limits the email address to 254 characters.
         https://www.ietf.org/rfc/rfc2821.txt
     */
-    protected static final int MAXIMUM_LENGTH = 254;
+    protected static final int EMAIL_MAXIMUM_LENGTH = 254;
 
     public Email(final String value) {
         super(value);
@@ -29,8 +29,8 @@ public class Email extends Molecule<String> {
 
     @Override
     protected void validate(String value) {
-        if (value.length() > MAXIMUM_LENGTH) {
-            throw new IllegalArgumentException(String.format("Email cannot be longer than %d", MAXIMUM_LENGTH));
+        if (value.length() > EMAIL_MAXIMUM_LENGTH) {
+            throw new IllegalArgumentException(String.format("Email cannot be longer than %d", EMAIL_MAXIMUM_LENGTH));
         }
         if (!EmailValidator.getInstance(true).isValid(value)) {
             throw new IllegalArgumentException(String.format("Not a valid email address: [%s]", value));
