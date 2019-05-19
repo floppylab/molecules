@@ -23,7 +23,7 @@ public class Person {
 Can you see that we have these properties: name and email addess, but we have to map them to types like String, Date, etc.
 And do not forget about validating these data in the service layer....
 
-So instead of these, why can't we have a Name or an Email types? And these types should know what is a valid email address or what is the maximum lenght of a name.
+So instead of these, why can't we have a Name or an Email types? And these types should know what is a valid email address or what is the maximum length of a name.
 
 By using molecules, your Person class could look like this:
 
@@ -39,7 +39,7 @@ public class Person {
 ```
 Isn't it better? :)
 
-Do you like the idea? Check out all the [molecules](#what-molecules-are-available) or help me! :)
+Do you like the idea? Check out all the [molecules](#what-molecules-are-available) or [help](CONTRIBUTING.md)! :)
 
 ## what molecules are available?
 
