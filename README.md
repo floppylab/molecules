@@ -47,6 +47,7 @@ Currently, these molecules are available within the following packages:
 
 * [Personal](src/main/java/com/floppylab/molecules/personal)
   * [Name](src/main/java/com/floppylab/molecules/personal#name)
+  * [NotEmptyName](src/main/java/com/floppylab/molecules/personal#notemptyname)
 * [Contact](src/main/java/com/floppylab/molecules/contact)
   * [Email](src/main/java/com/floppylab/molecules/contact#email)
   
