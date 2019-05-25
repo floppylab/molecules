@@ -1,10 +1,17 @@
 # Personal
 
-You can find all those molecules here that are about describing a person.
+You can find all those molecules here that describes a person.
 
 ## Name
 
-Represents a general name field
+Represents a general name field.
 
- * minimum length : 1
  * maximum length : 100
+ 
+## NotEmptyName
+ 
+Represents a general name field. Extends Name and has a minimum length.
+ 
+ * maximum length : 100
+ * minimum length : 1
+  

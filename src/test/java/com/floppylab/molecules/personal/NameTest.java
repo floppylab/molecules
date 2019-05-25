@@ -1,5 +1,6 @@
 package com.floppylab.molecules.personal;
 
+import com.floppylab.molecules.exception.MoleculeException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,14 +14,15 @@ public class NameTest {
         Assert.assertEquals("John Doe", name.getValue());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void should_ThrowException_When_TooShortName() {
-        Name name = new Name(String.join("", Collections.nCopies(Name.NAME_MINIMUM_LENGTH - 1, "n")));
+    @Test
+    public void should_ValueEqual_When_EmptyName() {
+        Name name = new Name("");
+        Assert.assertEquals("", name.getValue());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = MoleculeException.class)
     public void should_ThrowException_When_TooLongName() {
-        Name name = new Name(String.join("", Collections.nCopies(Name.NAME_MAXIMUM_LENGTH + 1, "n")));
+        Name name = new Name(String.join("", Collections.nCopies(101, "n")));
     }
 
 }

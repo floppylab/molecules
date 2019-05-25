@@ -1,5 +1,6 @@
 package com.floppylab.molecules.contact;
 
+import com.floppylab.molecules.exception.MoleculeException;
 import org.apache.commons.validator.routines.EmailValidator;
 
 import com.floppylab.molecules.Molecule;
@@ -11,6 +12,20 @@ public class Email extends Molecule<String> {
 
     private static final long serialVersionUID = 0L;
 
+    public Email(final String value) {
+        super(value);
+    }
+
+    @Override
+    protected void validate(String value) {
+        if (value.length() > getEmailMaximumLength()) {
+            throw new MoleculeException("error.email.length.maximum", Integer.toString(getEmailMaximumLength()));
+        }
+        if (!EmailValidator.getInstance(true).isValid(value)) {
+            throw new MoleculeException("error.email.format");
+        }
+    }
+
     /*
         The maximum total length of a reverse-path or forward-path is 256 characters,
         including the punctuation and element separators”.
@@ -21,20 +36,8 @@ public class Email extends Molecule<String> {
         which limits the email address to 254 characters.
         https://www.ietf.org/rfc/rfc2821.txt
     */
-    protected static final int EMAIL_MAXIMUM_LENGTH = 254;
-
-    public Email(final String value) {
-        super(value);
-    }
-
-    @Override
-    protected void validate(String value) {
-        if (value.length() > EMAIL_MAXIMUM_LENGTH) {
-            throw new IllegalArgumentException(String.format("Email cannot be longer than %d", EMAIL_MAXIMUM_LENGTH));
-        }
-        if (!EmailValidator.getInstance(true).isValid(value)) {
-            throw new IllegalArgumentException(String.format("Not a valid email address: [%s]", value));
-        }
+    protected int getEmailMaximumLength() {
+        return 254;
     }
 
 }

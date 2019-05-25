@@ -1,11 +1,10 @@
 package com.floppylab.molecules.contact;
 
+import com.floppylab.molecules.exception.MoleculeException;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Collections;
-
-import static com.floppylab.molecules.contact.Email.EMAIL_MAXIMUM_LENGTH;
 
 public class EmailTest {
 
@@ -15,12 +14,12 @@ public class EmailTest {
         Assert.assertEquals("test@test.org", email.getValue());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = MoleculeException.class)
     public void should_ThrowException_When_TooLongEmail() {
-        Email email = new Email(String.join("", Collections.nCopies(EMAIL_MAXIMUM_LENGTH, "t")) + "@test.org");
+        Email email = new Email(String.join("", Collections.nCopies(254, "t")) + "@test.org");
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = MoleculeException.class)
     public void should_ThrowException_When_InvalidEmail() {
         Email email = new Email("notAnEmail");
     }
