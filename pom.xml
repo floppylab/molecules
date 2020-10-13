@@ -12,7 +12,7 @@
         <lombok.version>1.16.20</lombok.version>
         <commons.validator.version>1.4.1</commons.validator.version>
         <commons.lang3.version>3.7</commons.lang3.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <persistence.api.version>1.0.2</persistence.api.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
